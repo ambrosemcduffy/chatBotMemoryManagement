@@ -42,6 +42,9 @@ ChatBot::~ChatBot()
     }
 }
 
+ChatBot::ChatBot(ChatBot &source){
+    
+}
 //// STUDENT CODE
 ////
 
