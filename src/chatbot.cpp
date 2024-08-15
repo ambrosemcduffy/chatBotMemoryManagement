@@ -42,9 +42,19 @@ ChatBot::~ChatBot()
     }
 }
 
-ChatBot::ChatBot(ChatBot &source){
-    
+ChatBot::ChatBot(const ChatBot &source){
+    std::cout << "Copy Constructor called.." << std::endl;
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _image = source._image;
 }
+
+ChatBot::ChatBot( ChatBot &&source){
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _image = source._image;    
+}
+
 //// STUDENT CODE
 ////
 
