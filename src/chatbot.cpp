@@ -41,18 +41,34 @@ ChatBot::~ChatBot()
         _image = NULL;
     }
 }
-
+// copy constructor
 ChatBot::ChatBot(const ChatBot &source){
-    std::cout << "Copy Constructor called.." << std::endl;
+    std::cout << "Copy Constructor called" << std::endl;
+
+    if (source._image != NULL){
+        _image = new  wxBitmap(*source._image);
+    }else{
+        _image = NULL;
+    }
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _currentNode = source._currentNode;
+}
+
+// move constructor
+ChatBot::ChatBot(ChatBot &&source){
+    std::cout << "Move Constructor called" << std::endl;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _image = source._image;
-}
+    _currentNode = source._currentNode;
 
-ChatBot::ChatBot( ChatBot &&source){
-    _chatLogic = source._chatLogic;
-    _rootNode = source._rootNode;
-    _image = source._image;    
+
+    source._chatLogic = nullptr;
+    source._rootNode = nullptr;
+    source._image = NULL;
+    source._currentNode = nullptr;
+
 }
 
 //// STUDENT CODE

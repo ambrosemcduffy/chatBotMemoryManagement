@@ -136,7 +136,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     std::cout << "Destructor has been called" << std::endl;
-    delete _chatLogic.get();
+    //delete _chatLogic.get();
 }
 
 void ChatBotPanelDialog::AddDialogItem(wxString text, bool isFromUser)
