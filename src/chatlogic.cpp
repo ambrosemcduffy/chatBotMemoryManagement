@@ -49,7 +49,6 @@ ChatLogic::~ChatLogic()
     //     delete *itEdge;
     //     ++itEdge;
     // } 
-    _nodes.clear();
 
     ////
     //// EOF STUDENT CODE
